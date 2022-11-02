@@ -47,9 +47,31 @@ public class Exercice3 {
     private static final String MSG_17 = "Give us the two numbers :";
     private static final String MSG_18 = "The number is out of 25 and 50  ";
     private static final String MSG_19 = "Error";
+   
+    ////Commentaire exercice_F
+    private static final String MSG_20 = "Give us the first number :";
+    private static final String MSG_21 = "Now the second : ";
+    private static final String MSG_22 = "the result is samller than 15";
+    private static final String MSG_23 = "the result is higher than 15";
+
+    ////Commentaire exercice_G
+    private static final String MSG_24 = "Give us a number :";
+    private static final String MSG_25 = "the number is pair ";
+    private static final String MSG_26 = "the number is impair";
+    
+    ////Commentaire exercice_H
+    private static final String MSG_24 = "Give us a number :";
+    private static final String MSG_25 = "the number is pair ";
+    private static final String MSG_26 = "the number is impair";
+    
+    //
+      private static final String MSG_27 = "Give us the first number :";
+    private static final String MSG_28 = "Give us the second number ";
+    
     public static void main(String[] args) {
+      
         //A
-        /*
+        
         int num;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_1);
@@ -59,9 +81,9 @@ public class Exercice3 {
         } else {
             System.out.println(MSG_2);
         }
-         */
+         
         //B
-        /*
+        
         int num;
          Scanner sc = new Scanner(System.in);
         System.out.println(MSG_4);
@@ -74,9 +96,9 @@ public class Exercice3 {
         else {
             System.out.println(MSG_6);
         }
-         */
+         
         //C
-        /*
+        
         int num;
          Scanner sc = new Scanner(System.in);
         System.out.println(MSG_11);
@@ -86,9 +108,9 @@ public class Exercice3 {
         }else{
             System.out.println(MSG_13);
         }
-         */
+         
         //D
-        /*
+        
         int num;
         Scanner sc = new Scanner(System.in);
         System.out.println(MSG_8);
@@ -99,8 +121,7 @@ public class Exercice3 {
         else {
             System.out.println(MSG_10);
             }
-         */
-        /*
+       
         //E
         int num;
         Scanner sc = new Scanner(System.in);
@@ -111,14 +132,53 @@ public class Exercice3 {
         } else {
             System.out.println(MSG_15);
         }
-        */
+      
         //F
-        int num1,num2;
+        int num1, num2;
         Scanner sc = new Scanner(System.in);
-        System.out.println(MSG_17);
+        System.out.println(MSG_20);
         num1 = sc.nextInt();
+        System.out.println(MSG_21);
         num2 = sc.nextInt();
-        
+        if (num1 / num2 < 15) {
+            System.out.println(MSG_22);
+        } else {
+            System.out.println(MSG_23);
+        }
+        //G
+        int num;
+        Scanner sc = new Scanner(System.in);
+        System.out.println(MSG_24);
+        num = sc.nextInt();
+        if(num % 2 == 0){
+            System.out.println(MSG_25);
+        }else 
+            System.out.println(MSG_26);
+        //H
+        int i = num >> 1;
+        Scanner sc = new Scanner(System.in);
+        System.out.println(MSG_24);
+        num = sc.nextInt();
+        if ((num & 1) == 1) {
+            System.out.println(MSG_26);
+        } // si num est pair
+        else {
+            System.out.println(MSG_25);
+
+        }
+        // 
+           int num1, num2;
+           Scanner sc = new Scanner(System.in);
+        System.out.println(MSG_27);
+        num1 = sc.nextInt();
+         System.out.println(MSG_28);
+        num2 = sc.nextInt();
+      if( num1 >= num2 ){
+           System.out.println("Le plus grand nombre est: "+num1);
+      }
+      else  (num2 >= num1 ){
+        System.out.println("Le plus grand nombre est: "+num2);
+    }
     }
 
 }
