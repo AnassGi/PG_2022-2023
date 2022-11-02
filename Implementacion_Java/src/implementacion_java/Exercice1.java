@@ -11,10 +11,10 @@ package implementacion_java;
 public class Exercice1 {
     public static void main(String[] args) {
          //Anass Gzouli 
-    //INS Manuel Vázquez Montalbán
-    //28-10-1998
-    //2DAW
-    //Programacion
+         //INS Manuel Vázquez Montalbán
+         //28-10-1998
+         //2DAW
+         //Programacion
     
         //Print your name:
         System.out.println("Anass");
