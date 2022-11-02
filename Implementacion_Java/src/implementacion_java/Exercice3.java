@@ -60,9 +60,9 @@ public class Exercice3 {
     private static final String MSG_26 = "the number is impair";
     
     ////Commentaire exercice_H
-    private static final String MSG_24 = "Give us a number :";
-    private static final String MSG_25 = "the number is pair ";
-    private static final String MSG_26 = "the number is impair";
+    private static final String MSG_44 = "Give us a number :";
+    private static final String MSG_45 = "the number is pair ";
+    private static final String MSG_46 = "the number is impair";
     
     ////Commentaire exercice_I
       private static final String MSG_27 = "Give us the first number :";
@@ -162,13 +162,13 @@ public class Exercice3 {
         //H
         int i = num >> 1;
         Scanner sc = new Scanner(System.in);
-        System.out.println(MSG_24);
+        System.out.println(MSG_44);
         num = sc.nextInt();
         if ((num & 1) == 1) {
-            System.out.println(MSG_26);
+            System.out.println(MSG_46);
         } // si num est pair
         else {
-            System.out.println(MSG_25);
+            System.out.println(MSG_45);
 
         }
         //I
