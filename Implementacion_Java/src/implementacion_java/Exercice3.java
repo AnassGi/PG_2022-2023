@@ -64,9 +64,14 @@ public class Exercice3 {
     private static final String MSG_25 = "the number is pair ";
     private static final String MSG_26 = "the number is impair";
     
-    //
+    ////Commentaire exercice_I
       private static final String MSG_27 = "Give us the first number :";
     private static final String MSG_28 = "Give us the second number ";
+   
+    ////Commentaire exercice_J
+   private static final String MSG_29 = "Give us the first number :";
+    private static final String MSG_30 = "Give us the second number ";
+    private static final String MSG_31 = "Give us the Third number :";
     
     public static void main(String[] args) {
       
@@ -166,7 +171,7 @@ public class Exercice3 {
             System.out.println(MSG_25);
 
         }
-        // 
+        //I
            int num1, num2;
            Scanner sc = new Scanner(System.in);
         System.out.println(MSG_27);
@@ -179,6 +184,23 @@ public class Exercice3 {
       else  (num2 >= num1 ){
         System.out.println("Le plus grand nombre est: "+num2);
     }
+     //J
+          int num1, num2, num3;
+        Scanner sc = new Scanner(System.in);
+        System.out.println(MSG_29);
+        num1 = sc.nextInt();
+        System.out.println(MSG_30);
+        num2 = sc.nextInt();
+        System.out.println(MSG_31);
+        num3 = sc.nextInt();
+        if (num1 >= num2 && num1 >= num3) {
+            System.out.println("The maximum number is : " + num1);
+        } else if (num2 >= num1 && num2 >= num3) {
+           
+            System.out.println("The maximum number is: " + num2);
+        } else {
+            System.out.println("The maximum number is: " + num3);
+        }
     }
 
 }
