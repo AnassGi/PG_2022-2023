@@ -5,133 +5,172 @@
 
 package com.mycompany.projectjava;
 
+
 import java.util.Scanner;
 
 /**
  *
  * @author alumne_2n
  */
-public class Purchase {
-    
-    private final static String MSG_1 = "Give us your Id?: ";
-    private final static String MSG_2 = "Now your age!: ";
-    private final static String MSG_3 = "What Type of sale?: ";
-    private final static String MSG_4 = "What is the Purchase amount?: ";
-    private final static String MSG_5 = "Contact number?: ";
-    private final static String MSG_6 = "ERROR in the data ";
-    private final static String MSG_7 = "Program ended due to data error (*-*) ";
-    private static int trying = 0;
-    
+
+public class Main {
     public static void main(String[] args) {
-       int id, age, type_sale, import_pursh, contact_number;
-        String tipo_venta = "";
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print(MSG_1);
-        id = sc.nextInt();
-        if (id >= 1000 || id <= 110) {
-            System.out.print("\n" + MSG_6 + "\n");
-        }
-        while (id >= 1000 || id <= 110) {
-            if (trying < 2) {
-                System.out.print(MSG_1);
-                id = sc.nextInt();
-                if (id >= 1000 || id <= 110) {
-                    System.out.println("\n" + MSG_6 + "\n");
-                    trying++;
-                }
+        // variable to keep track of the number of attempts for each data entry
+        int attempts;
+        
+        // customer data
+        int id;
+        int age;
+        int saleType;
+        int purchaseAmount;
+        int phoneNumber;
 
-            } else if (trying == 2) {
-                System.out.println(MSG_7);
-                return;
-            }
-        }
-        System.out.print("\n" + MSG_2);
-        age = sc.nextInt();
-        if (age >= 121 || age <= 13) {
-            System.out.println("\n" + MSG_6 + "\n");
-        }
-        while (age >= 121 || age <= 13) {
-            if (trying < 2) {
-                System.out.println(MSG_2);
-                age = sc.nextInt();
-                if (age >= 121 || age <= 13) {
-                    System.out.println("\n" + MSG_6 + "\n");
-                    trying++;
-                }
+        // get customer id
+        attempts = 0;
+        while (attempts < 3) {
+            System.out.print("Enter customer id (between 111 and 999): ");
+            String input = scanner.nextLine();
 
-            } else if (trying == 2) {
-                System.out.println(MSG_7);
-                return;
-            }
-        }
-        do {
-            System.out.println("\n" + MSG_3 + "\n venda lliure (0)\npensionista (1)\ncarnet jove (2)\nsoci (3)\n");
-        type_sale = sc.nextInt();
-                
-                switch (type_sale) {
-                    case 0:
-                        tipo_venta = "lliure";
-                        break;
-                    case 1:
-                        tipo_venta = "pensionista";
-                        break;
-                    case 2:
-                        tipo_venta = "jove";
-                        break;
-                    case 3:
-                        tipo_venta = "soci";
-                        break;
-                    default: System.out.println(MSG_6);
-                        break;
-            }
-                trying++;
-                if(trying == 3){
-                    System.out.println(MSG_7);
-                    return;
+            try {
+                id = Integer.parseInt(input);
+
+                if (id >= 111 && id <= 999) {
+                    break;
+                } else {
+                    System.out.println("Invalid id. Please enter a number between 111 and 999.");
                 }
-        }while(type_sale >= 4 || type_sale <= -1);
-        System.out.print("\n" + MSG_4);
-        import_pursh = sc.nextInt();
-        if (import_pursh >= 1001 || import_pursh <= -1) {
-            System.out.println("\n" + MSG_6 + "\n");
-        }
-        while (import_pursh >= 1001 || import_pursh <= -1) {
-            if (trying < 2) {
-                System.out.print("\n" + MSG_4);
-                import_pursh = sc.nextInt();
-                if (import_pursh >= 1001 || import_pursh <= -1) {
-                    System.out.println("\n" + MSG_6 + "\n");
-                    trying++;
-                }
-            } else if (trying == 2) {
-                System.out.println(MSG_7);
-                return;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
             }
+
+            attempts++;
         }
-        System.out.print("\n" + MSG_5);
-        contact_number = sc.nextInt();
-        if (contact_number >= 1000000000 || contact_number <= 111111110) {
-            System.out.println("\n" + MSG_6 + "\n");
-        }
-        while (contact_number >= 1000000000 || contact_number <= 111111110) {
-            if (trying < 2) {
-                System.out.print("\n" + MSG_5);
-                contact_number = sc.nextInt();
-                if (contact_number >= 1000000000 || contact_number <= 111111110) {
-                    System.out.println("\n" + MSG_6 + "\n");
-                    trying++;
-                }
-                return;
-            } else if (trying == 2) {
-                System.out.println(MSG_7);
-                return;
-            }
+
+        if (attempts == 3) {
+            System.out.println("You have exhausted all attempts. The program will now exit.");
+            return;
         }
         
+        // get customer age
+        attempts = 0;
+        while (attempts < 3) {
+            System.out.print("Enter customer age (between 14 and 120): ");
+            String input = scanner.nextLine();
+
+            try {
+                age = Integer.parseInt(input);
+
+                if (age >= 14 && age <= 120) {
+                    break;
+                } else {
+                    System.out.println("Invalid age. Please enter a number between 14 and 120.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+
+            attempts++;
+        }
+
+        if (attempts == 3) {
+            System.out.println("You have exhausted all attempts. The program will now exit.");
+            return;
+        }
         
-        System.out.println("\n" + "ID:\t" + "Age:\t" + "Type:\t" + "Import:\t" + "Phone number:\t");
-        System.out.println(id + "\t" + age + "\t" + tipo_venta + "\t" + import_pursh + "\t" + contact_number);
-    }
+        // get sale type
+        attempts = 0;
+        while (attempts < 3) {
+            System.out.println("Sale type options:");
+            System.out.println("0 - Regular sale");
+            System.out.println("1 - Pensioner sale");
+            System.out.println("2 - Young card sale");
+            System.out.println("3 - Member sale");
+            System.out.print("Enter sale type: ");
+            String input = scanner.nextLine();
+
+            try {
+                saleType = Integer.parseInt(input);
+
+                if (saleType >= 0 && saleType <= 3) {
+                    break;
+                } else {
+                    System.out.println("Invalid sale type. Please enter a number between 0 and 3.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+
+            attempts++;
+        }
+
+        if (attempts == 3) {
+            System.out.println("You have exhausted all attempts. The program will now exit.");
+            return;
+        }
         
-    }
+        // get purchase amount
+        attempts = 0;
+        while (attempts < 3) {
+            System.out.print("Enter purchase amount (between 0 and 1000): ");
+            String input = scanner.nextLine();
+
+            try {
+                purchaseAmount = Integer.parseInt(input);
+
+                if (purchaseAmount >= 0 && purchaseAmount <= 1000) {
+                    break;
+                } else {
+                    System.out.println("Invalid purchase amount. Please enter a number between 0 and 1000.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+
+            attempts++;
+        }
+
+        if (attempts == 3) {
+            System.out.println("You have exhausted all attempts. The program will now exit.");
+            return;
+        }
+
+        // get phone number
+        attempts = 0;
+        while (attempts < 3) {
+            System.out.print("Enter phone number (between 111111111 and 999999999): ");
+            String input = scanner.nextLine();
+
+            try {
+                phoneNumber = Integer.parseInt(input);
+                String phoneNumberString = Integer.toString(phoneNumber);
+
+                if (phoneNumber >= 111111111 && phoneNumber <= 999999999 && phoneNumberString.length() == 9) {
+                    break;
+                } else {
+                    System.out.println("Invalid phone number. Please enter a number between 111111111 and 999999999 and 9 digits long.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+
+            attempts++;
+        }
+
+        if (attempts == 3) {
+            System.out.println("You have exhausted all attempts. The program will now exit.");
+            return;
+        }
+
+        // print summary
+        System.out.println("Summary:");
+        System.out.println("Customer id: " + id);
+        System.out.println("Age: " + age);
+System.out.println("Sale type: " + saleType);
+System.out.println("Purchase amount: " + purchaseAmount);
+System.out.println("Phone number: " + phoneNumber);
+}
+}
+
+
